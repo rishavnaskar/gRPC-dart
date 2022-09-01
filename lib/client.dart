@@ -25,14 +25,14 @@ class Client {
       print(res);
 
       // Get a list of todos as a future
-      // final v = new VoidNoParam();
-      // var todos = await stub.readTodos(v);
-      // print(todos.items);
+      final v = new VoidNoParam();
+      var todos = await stub.readTodos(v);
+      print(todos.items);
 
       // Get the todos as a stream, listen to it, and print the values. If you run another client and create new todos, you'll see this stream get updated
-      // stub.readTodosStream(v).listen((value) {
-      //   print(value);
-      // });
+      stub.readTodosStream(v).listen((value) {
+        print(value);
+      });
     } catch (e) {
       print(e);
     }
